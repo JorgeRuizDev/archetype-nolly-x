@@ -6,7 +6,7 @@ The project is managed with [uv](https://docs.astral.sh/uv/).
 
 ---
 
-## 🎸 Technical Context: What Are These `.xml` Files?
+## Technical Context: What Are These .xml Files?
 
 Despite their `.xml` file extension, Archetype Nolly X presets (and other Neural DSP plugins) are neither plain text nor standard XML. They are binary streams representing the internal **`juce::ValueTree`** structure serialized via `ValueTree::writeToStream()` and `var::writeToStream()`:
 
@@ -23,7 +23,7 @@ This package implements full serializers and deserializers without heavy third-p
 
 ---
 
-## 🚀 Requirements & Installation
+## Requirements & Installation
 
 Only `uv` (or Python 3.11+) is required:
 
@@ -34,7 +34,7 @@ uv sync
 
 ---
 
-## ⚡ Unified CLI: `nolly.cmd` (For AI Agents & Guitarists)
+## Unified CLI: nolly.cmd (For AI Agents & Guitarists)
 
 The repository root includes the ultra-fast `nolly.cmd` tool (executes in ~0.25s) that automates search, 1-step tone generation, verification, and knob table reporting:
 
@@ -55,7 +55,7 @@ The repository root includes the ultra-fast `nolly.cmd` tool (executes in ~0.25s
 
 ---
 
-## 🛠️ Command-Line Interface (CLI)
+## Command-Line Interface (CLI)
 
 All commands can be executed via `uv run python main.py <command>` from the `preset_editor` folder:
 
@@ -154,7 +154,7 @@ uv run python main.py validate
 
 ---
 
-## 🐍 Python Library Usage
+## Python Library Usage
 
 You can also use the package directly in Python scripts or notebooks:
 
@@ -185,7 +185,7 @@ preset.save("../User/Lead Solos.xml")
 
 ---
 
-## 🧪 Automated Testing
+## Automated Testing
 
 The project includes unit tests with `pytest` verifying byte-by-byte roundtrip fidelity across all presets:
 

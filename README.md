@@ -1,4 +1,4 @@
-# 🎸 Archetype Nolly X Tone Suite & Preset Engine
+# Archetype Nolly X Tone Suite & Preset Engine
 
 A comprehensive pure-Python toolsuite for preset management, search, reverse engineering, atomic tone creation, and AI agent integration (Antigravity / LLMs) for **Archetype Nolly X** by Neural DSP.
 
@@ -6,7 +6,7 @@ It parses and serializes the internal binary **JUCE `ValueTree`** structure with
 
 ---
 
-## ⚡ 1-Command Installation & Restore
+## 1-Command Installation & Restore
 
 If you reinstall Archetype Nolly X or switch machines, you can download and restore the complete toolsuite, AI instructions (`AGENTS.md`), YAML preset catalog, and all your custom tones in `User/` with **a single PowerShell command**:
 
@@ -23,7 +23,7 @@ irm https://raw.githubusercontent.com/JorgeRuizDev/archetype-nolly-x/main/instal
 
 ---
 
-## 💻 Manual Installation via Git
+## Manual Installation via Git
 
 If you prefer using Git directly from your terminal:
 
@@ -47,7 +47,7 @@ uv sync
 
 ---
 
-## 🚀 Fast CLI Workflow (`nolly.cmd`)
+## Fast CLI Workflow (nolly.cmd)
 
 The root `.\nolly.cmd` script executes in ~0.25 seconds using the optimized `.venv` virtual environment:
 
@@ -71,7 +71,7 @@ Clones a base preset, applies parameter updates (supports decimal floats, 0–10
 
 ---
 
-## 🤖 AI Assistant Integration (`AGENTS.md`)
+## AI Assistant Integration (AGENTS.md)
 
 This repository includes [AGENTS.md](AGENTS.md), which specifies the exact rules for AI models (Antigravity, Cursor, Claude Code, etc.) to craft tailored presets for your guitar gear (e.g., Squier Stratocaster SSS, Scarlett Solo interface, Drop D / E Standard tunings).
 
@@ -81,7 +81,7 @@ Organizational rules:
 
 ---
 
-## 🐍 Python API Usage
+## Python API Usage
 
 The package is directly importable without manual `sys.path` configuration:
 
@@ -106,7 +106,7 @@ print(preset.generate_tone_report(song="My Band - Song", preset_num="00"))
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Run the test suite (15 unit tests covering byte-for-byte binary roundtrip and parsing):
 
@@ -116,7 +116,7 @@ uv run pytest
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── AGENTS.md            # AI agent instructions and guitar gear specifications

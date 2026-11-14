@@ -19,7 +19,7 @@ param (
 $ErrorActionPreference = "Stop"
 
 Write-Host "============================================================" -ForegroundColor Cyan
-Write-Host "  🎸 Archetype Nolly X Tone Suite - Setup & Restorer        " -ForegroundColor Cyan
+Write-Host "  Archetype Nolly X Tone Suite - Setup & Restorer           " -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host "Repository: $RepoUrl" -ForegroundColor Gray
 Write-Host "Target:     $InstallDir" -ForegroundColor Gray
@@ -113,7 +113,7 @@ try {
 
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Green
-Write-Host "  🎉 Setup & restore completed successfully!                " -ForegroundColor Green
+Write-Host "  Setup & restore completed successfully!                   " -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
 Write-Host "To start using the CLI:" -ForegroundColor Cyan
 Write-Host "  cd `"$InstallDir`"" -ForegroundColor White

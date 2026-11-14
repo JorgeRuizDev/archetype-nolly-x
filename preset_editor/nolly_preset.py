@@ -811,9 +811,9 @@ class NollyPreset:
         summ = self.summary()
         g_recs = self.get_guitar_recommendations()
 
-        title_line = f"### 🎸 Preset: {self.name}"
+        title_line = f"### Preset: {self.name}"
         if song:
-            title_line = f"### 🎸 {song} — Preset {preset_num or ''}: {self.name}"
+            title_line = f"### {song} - Preset {preset_num or ''}: {self.name}"
 
         # Active pedals list
         active_fx = []
@@ -843,11 +843,11 @@ class NollyPreset:
 - **Efectos y Pedales Activos**: {fx_str}
 {f"- **Preset Base**: `{base_preset}`" if base_preset else ""}
 
-#### 🎛️ Ajustes de Potenciómetros (Escala 0–10 y Posición Horaria)
+#### Ajustes de Potenciometros (Escala 0-10 y Posicion Horaria)
 
 {self.format_knob_table(active_only=True)}
 
-#### 🎸 Configuración Sugerida de Guitarra (Squier Stratocaster SSS)
+#### Configuracion Sugerida de Guitarra (Squier Stratocaster SSS)
 
 - **Selector de Pastillas**: {g_recs['pickup']}
 - **Volumen de la Guitarra**: {g_recs['volume']}
