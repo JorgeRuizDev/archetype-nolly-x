@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archetype-nolly-x"
+version = "0.2.0"
+description = "Archetype Nolly X Preset Tools and Tone Engine"
+readme = "AGENTS.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0.3",
+]
+
+[project.scripts]
+nolly = "preset_editor.cli:main"
+nolly-xml2yml = "preset_editor.xml2yml:main"
+nolly-yml2xml = "preset_editor.yml2xml:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.setuptools]
+packages = ["preset_editor"]
+py-modules = ["nolly"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "preset_editor"]
+testpaths = ["preset_editor/tests"]

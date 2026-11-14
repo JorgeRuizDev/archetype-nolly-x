@@ -1,0 +1,339 @@
+tag: nolly-x
+properties:
+  version: 1.0.0
+  name: SO FUNKY
+  isFavorite: false
+children:
+- tag: appModel
+  properties:
+    ampCabLinkedState: 'false'
+    selectedAmp: '0'
+    selectedCab: '2'
+  children:
+  - tag: subModels
+    properties: {}
+    children:
+    - tag: fixedParameters
+      properties: {}
+      children:
+      - tag: subModels
+        properties: {}
+        children: []
+    - tag: meters
+      properties: {}
+      children:
+      - tag: subModels
+        properties: {}
+        children: []
+    - tag: preset
+      properties: {}
+      children:
+      - tag: subModels
+        properties: {}
+        children: []
+    - tag: parameters
+      properties:
+        doublerSpread: '6'
+        doublerActive: 'false'
+        gateThreshold: '-80'
+        gateActive: 'true'
+        transpose: '0'
+        outputGain: '0'
+        inputGain: '0'
+      children:
+      - tag: subModels
+        properties: {}
+        children:
+        - tag: tunerParameters
+          properties: {}
+          children:
+          - tag: subModels
+            properties: {}
+            children: []
+        - tag: postFXParameters
+          properties:
+            sectionActive: 'true'
+          children:
+          - tag: subModels
+            properties: {}
+            children:
+            - tag: reverb
+              properties:
+                reverbActive: 'false'
+                reverbDecay: '4225'
+                reverbHighCut: '0.564217'
+                reverbLowCut: '0.423153'
+                reverbMix: '0.288978'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: postDelay
+              properties:
+                postDelaySyncNote: '13'
+                postDelayTime: '500'
+                postDelayTempo: '120'
+                postDelayFeedback: '0.5'
+                postDelayActive: 'false'
+                postDelayLowCut: '177.505'
+                postDelayHighCut: '3094.1'
+                postDelayModulation: '0.5'
+                postDelaySync: '1'
+                postDelayPingPong: 'false'
+                postDelayMix: '0.211824'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+        - tag: cabParameters
+          properties:
+            rightRoomActive: 'false'
+            rightCabStereo: 'false'
+            rightCabPan: '0.0585937'
+            rightCabDistance: '0'
+            rightCabPhase: 'false'
+            rightCabPosition: '0.35'
+            rightCab3ChosenIRFilePath: ''
+            rightCab2ChosenIRFilePath: ''
+            rightCab0ChosenIRFilePath: ''
+            sectionActive: 'false'
+            rightCab3MicType: '9'
+            rightCab2MicType: '9'
+            rightCabActive: 'false'
+            leftCabPhase: 'false'
+            rightCab1MicType: '3'
+            leftCabMicLevel: '0'
+            leftCabDistance: '0'
+            leftCabPosition: '0.35'
+            rightRoomMicLevel: '-5.99101'
+            rightCab0MicType: '9'
+            leftCab3ChosenIRFilePath: ''
+            leftCabStereo: 'false'
+            leftCab1MicType: '0'
+            leftCab2ChosenIRFilePath: ''
+            leftCab3MicType: '6'
+            rightCabMicLevel: '0'
+            leftCab0ChosenIRFilePath: ''
+            leftCab0MicType: '6'
+            leftRoomActive: 'false'
+            leftCab1ChosenIRFilePath: ''
+            leftRoomMicLevel: '-6'
+            leftCabPan: '-0.0585938'
+            leftCabActive: 'true'
+            rightCab1ChosenIRFilePath: ''
+            leftCab2MicType: '6'
+          children:
+          - tag: subModels
+            properties: {}
+            children: []
+        - tag: metronomeParameters
+          properties: {}
+          children:
+          - tag: subModels
+            properties: {}
+            children: []
+        - tag: ampParameters
+          properties:
+            sectionActive: 'false'
+          children:
+          - tag: subModels
+            properties: {}
+            children:
+            - tag: leadAmp
+              properties:
+                leadMaster: '0.5'
+                leadTreble: '0.5'
+                leadOutput: '0.768089'
+                leadMid: '0.5'
+                leadBass: '0.5'
+                leadGain: '0.666513'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: rhythmAmp
+              properties:
+                rhythmOutput: '0.782245'
+                rhythmMaster: '0.404523'
+                rhythmResonance: '0.682725'
+                rhythmPresence: '0.725014'
+                rhythmTreble: '0.496191'
+                rhythmMid: '0.401857'
+                rhythmBass: '0.611719'
+                rhythmGain: '0.5'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: crunchAmp
+              properties:
+                crunchOutput: '0.723801'
+                crunchMaster: '0.5'
+                crunchDepth: '0.401647'
+                crunchPresence: '0.804721'
+                crunchBright: 'true'
+                crunchTreble: '0.5'
+                crunchMid: '0.821179'
+                crunchBass: '0.673262'
+                crunchGain: '0.691041'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: cleanAmp
+              properties:
+                cleanOutput: '0.678965'
+                cleanBright: 'true'
+                cleanTreble: '0.6172'
+                cleanMid: '0.5'
+                cleanBass: '0.389137'
+                cleanMaster: '0.338565'
+                cleanGain: '0.5'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+        - tag: eqParameters
+          properties:
+            sectionActive: 'true'
+          children:
+          - tag: subModels
+            properties: {}
+            children:
+            - tag: leadEQ
+              properties:
+                leadEQActive: 'true'
+                leadEQLpf: '20000'
+                leadEQBand9: '0'
+                leadEQBand8: '0'
+                leadEQBand6: '0.00703125'
+                leadEQBand5: '0'
+                leadEQBand4: '0'
+                leadEQBand1: '0'
+                leadEQBand2: '0'
+                leadEQBand7: '0'
+                leadEQHpf: '20'
+                leadEQBand3: '0'
+                leadEQType: 'true'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: rhythmEQ
+              properties:
+                rhythmEQActive: 'true'
+                rhythmEQBand9: '0'
+                rhythmEQBand8: '0'
+                rhythmEQLpf: '20000'
+                rhythmEQBand6: '0'
+                rhythmEQBand5: '0'
+                rhythmEQHpf: '20'
+                rhythmEQBand4: '0'
+                rhythmEQBand2: '0'
+                rhythmEQBand3: '0'
+                rhythmEQBand7: '0'
+                rhythmEQType: 'true'
+                rhythmEQBand1: '0'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: crunchEQ
+              properties:
+                crunchEQActive: 'true'
+                crunchEQLpf: '20000'
+                crunchEQBand9: '0'
+                crunchEQBand7: '0'
+                crunchEQBand6: '0'
+                crunchEQBand5: '0'
+                crunchEQBand4: '0'
+                crunchEQBand3: '0'
+                crunchEQBand1: '0'
+                crunchEQBand8: '0'
+                crunchEQHpf: '20'
+                crunchEQBand2: '0'
+                crunchEQType: 'true'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: cleanEQ
+              properties:
+                cleanEQActive: 'true'
+                cleanEQLpf: '20000'
+                cleanEQBand9: '4.37054'
+                cleanEQBand8: '2.90148'
+                cleanEQBand7: '0'
+                cleanEQBand6: '-2.91351'
+                cleanEQBand5: '-4.10216'
+                cleanEQBand4: '-4.05056'
+                cleanEQBand2: '0'
+                cleanEQType: 'true'
+                cleanEQBand3: '-4.03977'
+                cleanEQHpf: '92.5838'
+                cleanEQBand1: '0'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+        - tag: preFXParameters
+          properties:
+            sectionActive: 'true'
+          children:
+          - tag: subModels
+            properties: {}
+            children:
+            - tag: preDelay
+              properties:
+                preDelayTone: '0.5'
+                preDelaySync: 'true'
+                preDelaySyncNote: '10'
+                preDelayTime: '80'
+                preDelayActive: 'false'
+                preDelayFeedback: '0.143772'
+                preDelayMix: '0.5'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: overdrive1
+              properties:
+                overdrive1Active: 'false'
+                overdrive1Tone: '0.5'
+                overdrive1Level: '0.611153'
+                overdrive1Bright: 'true'
+                overdrive1Drive: '0'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: overdrive2
+              properties:
+                overdrive2Active: 'false'
+                overdrive2Treble: '0.5'
+                overdrive2Level: '0.5'
+                overdrive2Bass: '0.5'
+                overdrive2Gain: '0.174049'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+            - tag: compressor
+              properties:
+                compressorActive: 'true'
+                compressorAttack: 'true'
+                compressorLevel: '0.828776'
+                compressorCompression: '0.814019'
+              children:
+              - tag: subModels
+                properties: {}
+                children: []
+    - tag: midiMap
+      properties: {}
+      children:
+      - tag: subModels
+        properties: {}
+        children: []
+      - tag: listElements
+        properties: {}
+        children: []

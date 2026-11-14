@@ -1,0 +1,17 @@
+[project]
+name = "preset-editor"
+version = "0.1.0"
+description = "Archetype Nolly X Preset Editor (JUCE ValueTree Binary Parser & Serializer)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
