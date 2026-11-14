@@ -30,3 +30,9 @@ desktop.ini
 # Logs & temporary files
 *.log
 *.tmp
+
+# Native Neural DSP Factory Presets (XML)
+/Artists/
+/Neural DSP/
+/Nolly/
+/Default.xml
