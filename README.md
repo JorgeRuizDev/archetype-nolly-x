@@ -1,33 +1,33 @@
 # 🎸 Archetype Nolly X Tone Suite & Preset Engine
 
-Suite integral de herramientas en Python puro para gestión, búsqueda, ingeniería inversa, creación atómica de tonos e integración con asistentes de Inteligencia Artificial (Antigravity / LLMs) para **Archetype Nolly X** (Neural DSP).
+A comprehensive pure-Python toolsuite for preset management, search, reverse engineering, atomic tone creation, and AI agent integration (Antigravity / LLMs) for **Archetype Nolly X** by Neural DSP.
 
-Serializa y deserializa la estructura binaria interna de **JUCE `ValueTree`** con fidelidad byte a byte (100% roundtrip bit-for-bit), y proporciona utilidades de alta velocidad en formato YAML para interactuar con presets en milisegundos.
+It parses and serializes the internal binary **JUCE `ValueTree`** structure with byte-by-byte precision (100% roundtrip bit-for-bit fidelity) and provides high-speed YAML representations for interacting with presets in milliseconds.
 
 ---
 
-## ⚡ Instalación y Restauración en 1 Solo Comando
+## ⚡ 1-Command Installation & Restore
 
-Si reinstalas Archetype Nolly X o cambias de equipo, puedes descargar y restaurar toda la herramienta, las instrucciones de IA (`AGENTS.md`), el catálogo de presets y tus tonos de usuario con **un solo comando en PowerShell**:
+If you reinstall Archetype Nolly X or switch machines, you can download and restore the complete toolsuite, AI instructions (`AGENTS.md`), YAML preset catalog, and all your custom tones in `User/` with **a single PowerShell command**:
 
 ```powershell
 irm https://raw.githubusercontent.com/JorgeRuizDev/archetype-nolly-x/main/install.ps1 | iex
 ```
 
-### ¿Qué hace este comando automáticamente?
-1. Detecta o inicializa el directorio oficial de presets de Windows (`C:\ProgramData\Neural DSP\Archetype Nolly X`).
-2. Configura los permisos de Git (`safe.directory`) para evitar bloqueos de seguridad en `ProgramData`.
-3. Descarga y sincroniza la herramienta completa + `AGENTS.md` + catálogo YAML + presets de canciones en `User/` (respetando los presets originales del instalador de Nolly).
-4. Configura el entorno virtual con `uv` o `python`.
-5. Ejecuta una prueba de validación y deja `.\nolly.cmd` listo para usar.
+### What does this command do automatically?
+1. Detects or initializes the official Windows preset directory (`C:\ProgramData\Neural DSP\Archetype Nolly X`).
+2. Configures Git permissions (`safe.directory`) to prevent security blocks in `ProgramData`.
+3. Downloads and synchronizes the toolsuite, `AGENTS.md`, YAML preset catalog, and user songs in `User/` (safely overlaying without conflicting with the factory XML presets installed by Nolly).
+4. Sets up the Python virtual environment with `uv` or standard `python`.
+5. Runs a smoke test to ensure `.\nolly.cmd` is ready for instant use.
 
 ---
 
-## 💻 Instalación Manual con Git
+## 💻 Manual Installation via Git
 
-Si prefieres usar Git directamente desde la terminal:
+If you prefer using Git directly from your terminal:
 
-### Opción A: Tras haber reinstalado Nolly (el directorio ya existe con presets de fábrica)
+### Option A: After reinstalling Nolly (directory already exists with factory presets)
 ```cmd
 cd /d "%ProgramData%\Neural DSP\Archetype Nolly X"
 git config --global --add safe.directory "C:/ProgramData/Neural DSP/Archetype Nolly X"
@@ -38,7 +38,7 @@ git checkout -f main
 uv sync
 ```
 
-### Opción B: En una máquina limpia (antes de instalar Nolly)
+### Option B: On a fresh machine (before installing Nolly)
 ```cmd
 git clone https://github.com/JorgeRuizDev/archetype-nolly-x.git "%ProgramData%\Neural DSP\Archetype Nolly X"
 cd /d "%ProgramData%\Neural DSP\Archetype Nolly X"
@@ -47,68 +47,68 @@ uv sync
 
 ---
 
-## 🚀 Flujo de Trabajo Rápido (`nolly.cmd`)
+## 🚀 Fast CLI Workflow (`nolly.cmd`)
 
-El script `.\nolly.cmd` en la raíz ejecuta cualquier comando en ~0.25 segundos usando el entorno virtual `.venv`:
+The root `.\nolly.cmd` script executes in ~0.25 seconds using the optimized `.venv` virtual environment:
 
-### 1. Búsqueda instantánea en catálogo
+### 1. Instant Catalog Search
 ```cmd
 .\nolly.cmd search "metal" --amp rhythm
 .\nolly.cmd search "clean"
 ```
 
-### 2. Creación y validación de tono en 1 paso
-Clona un preset base, aplica parámetros (admite valores decimales, escala 0–10 y notación de reloj), compila tanto `.xml` como `.yml`, valida la integridad binaria e imprime el reporte para guitarra:
+### 2. 1-Step Tone Creation & Validation
+Clones a base preset, applies parameter updates (supports decimal floats, 0–10 scale, and clock notation), compiles both `.xml` and `.yml`, validates binary integrity, and prints a formatted guitar tone report:
 
 ```cmd
 .\nolly.cmd create --base "All-Purpose Metal Rhythm" --song "Tool - Lateralus" --num "00" --name "Main Drop D Riff" --set "rhythmGain=0.72" "rhythmBass=7.5/10" "rhythmPresence=2:30" "gateThreshold=-65"
 ```
 
-### 3. Inspección detallada con escala de reloj y 0-10
+### 3. Detailed Preset Inspection (with Clock & 0–10 Scale Table)
 ```cmd
 .\nolly.cmd inspect "User/Tool - Lateralus/00 - Main Drop D Riff.xml"
 ```
 
 ---
 
-## 🤖 Integración con Asistentes IA (`AGENTS.md`)
+## 🤖 AI Assistant Integration (`AGENTS.md`)
 
-Este repositorio incluye [AGENTS.md](AGENTS.md), que define las especificaciones exactas para que modelos de IA (Antigravity, Cursor, Claude Code, etc.) generen presets para tu equipamiento específico (ej. Fender Stratocaster SSS, Scarlett Solo, afinaciones Drop D / E Standard).
+This repository includes [AGENTS.md](AGENTS.md), which specifies the exact rules for AI models (Antigravity, Cursor, Claude Code, etc.) to craft tailored presets for your guitar gear (e.g., Squier Stratocaster SSS, Scarlett Solo interface, Drop D / E Standard tunings).
 
-Las reglas organizativas garantizan:
-- Salida en `.\User\<Banda> - <Canción>\XX - <Nombre>.xml` y `.yml`.
-- Representación obligatoria de potenciómetros en **horas de reloj** (7:00 a 5:00) y **escala 0 a 10** (el plugin no muestra números en sus potenciómetros).
+Organizational rules:
+- Presets are saved to `.\User\<Band> - <Song>\XX - <Name>.xml` and `.yml`.
+- Knobs are always presented in both **approximate clock positions** (7:00 to 5:00) and **0 to 10 scale** (since the plugin UI does not show numerical values on amp/pedal knobs).
 
 ---
 
-## 🐍 Uso de la API de Python
+## 🐍 Python API Usage
 
-El paquete es completamente importable sin configurar `sys.path`:
+The package is directly importable without manual `sys.path` configuration:
 
 ```python
 from nolly import NollyPreset, value_to_clock, clock_to_value, scale10_to_value
 
-# Carga polimórfica (.xml o .yml)
+# Universal polymorphic loader (.xml or .yml)
 preset = NollyPreset.load(r".\yml\Nolly\All-Purpose Metal Rhythm.yml")
 
-# Modificación inteligente
-preset.set_parameter("rhythmGain", "2:30")     # Convierte posición de reloj a valor float
-preset.set_parameter("rhythmBass", "7.0/10")   # Convierte escala 0-10 a float
+# Smart parameter manipulation
+preset.set_parameter("rhythmGain", "2:30")     # Converts clock notation to float
+preset.set_parameter("rhythmBass", "7.0/10")   # Converts 0-10 scale to float
 preset.set_parameter("gateActive", "true")
 
-# Guardado dual
-preset.save(r".\User\Mi Banda - Cancion\00 - Riff.yml")
-preset.save(r".\User\Mi Banda - Cancion\00 - Riff.xml")
+# Dual format export
+preset.save(r".\User\My Band - Song\00 - Riff.yml")
+preset.save(r".\User\My Band - Song\00 - Riff.xml")
 
-# Reporte formateado en Markdown
-print(preset.generate_tone_report(song="Mi Banda - Cancion", preset_num="00"))
+# Formatted Markdown tone report
+print(preset.generate_tone_report(song="My Band - Song", preset_num="00"))
 ```
 
 ---
 
-## 🧪 Tests
+## 🧪 Testing
 
-Ejecución de la suite de pruebas unitarias (15 tests de fidelidad roundtrip byte a byte y parsing):
+Run the test suite (15 unit tests covering byte-for-byte binary roundtrip and parsing):
 
 ```cmd
 uv run pytest
@@ -116,23 +116,23 @@ uv run pytest
 
 ---
 
-## 📁 Estructura del Repositorio
+## 📁 Repository Structure
 
 ```text
-├── AGENTS.md            # Instrucciones del sistema y reglas para agentes IA
-├── README.md            # Esta documentación
-├── install.ps1          # Instalador / sincronizador en 1 línea para PowerShell
-├── nolly.py             # Entrypoint y shim del módulo raíz
-├── nolly.cmd            # Ejecutable de línea de comandos para Windows
-├── xml2yml.cmd          # Conversor XML a YAML
-├── yml2xml.cmd          # Conversor YAML a XML
-├── pyproject.toml       # Definición del paquete Python y dependencias
-├── uv.lock              # Lockfile de dependencias reproducibles
-├── preset_editor/       # Código fuente del parser JUCE ValueTree y motor de presets
-│   ├── cli.py           # CLI unificada (search, create, inspect)
-│   ├── juce_valuetree.py# Serializador binario JUCE puro
-│   ├── nolly_preset.py  # Modelado del preset y conversiones reloj/escala
-│   └── tests/           # Tests unitarios pytest
-├── yml/                 # Catálogo completo de presets de fábrica convertidos a YAML
-└── User/                # Presets de usuario organizados por canciones
+├── AGENTS.md            # AI agent instructions and guitar gear specifications
+├── README.md            # Main documentation (this file)
+├── install.ps1          # 1-line PowerShell installer and restorer
+├── nolly.py             # Root module shim and CLI entrypoint
+├── nolly.cmd            # Windows batch CLI runner
+├── xml2yml.cmd          # Standalone XML to YAML converter
+├── yml2xml.cmd          # Standalone YAML to XML converter
+├── pyproject.toml       # Python package definition and dependencies
+├── uv.lock              # Reproducible dependency lockfile
+├── preset_editor/       # JUCE ValueTree binary parser & preset engine
+│   ├── cli.py           # Unified CLI (search, create, inspect)
+│   ├── juce_valuetree.py# Pure JUCE binary serializer / deserializer
+│   ├── nolly_preset.py  # Preset model, parameter mapping & clock conversions
+│   └── tests/           # pytest unit test suite
+├── yml/                 # Complete factory catalog converted to YAML for rapid search
+└── User/                # User presets organized by song folders
 ```

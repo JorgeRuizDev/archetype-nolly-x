@@ -1,8 +1,8 @@
 ## Gear:
 - Squier Stratocaster SSS
 - Focusrite Scarlett Solo 2
-- Usually - E Standard or D Drop. So use the transposer for lower tunes 
-Try to suggest guitar config (pickup position, knobs, etc) with each preset. Avoid repeating yourself.
+- Usually - E Standard or D Drop. So use the transposer for lower tunings.
+Try to suggest guitar configuration (pickup position, knobs, etc.) with each preset. Avoid repeating yourself.
 
 ## Organisation
 
@@ -80,10 +80,10 @@ print(preset.generate_tone_report(song="Band - Song", preset_num="00"))
 ## Legacy Conversion Scripts Reference
 
 Backward-compatible standalone scripts:
-- **XML a YML**:
-  `.\xml2yml.cmd <archivo.xml> [archivo.yml]`
-- **YML a XML**:
-  `.\yml2xml.cmd <archivo.yml> <archivo.xml> [--name "<preset_name>"] [--report]`
+- **XML to YML**:
+  `.\xml2yml.cmd <input.xml> [output.yml]`
+- **YML to XML**:
+  `.\yml2xml.cmd <input.yml> <output.xml> [--name "<preset_name>"] [--report]`
   *(Use `--report` to output the knob scale & clock table upon generation)*
 
 ---
@@ -94,12 +94,12 @@ Backward-compatible standalone scripts:
 - **Double-click resets**: Double-clicking a knob RESETS it to its default value; it does NOT allow typing numbers.
 - **Dots are decorative**: The dots around pedal and amp knobs are visual design elements; they do NOT correspond to a 0 to 10 scale (there are over 20 dots around each knob).
 - **Fine Adjustment**: Holding `Ctrl` while dragging a knob enables precision/fine adjustment.
-- **Mandatory format for knob recommendations**: Because agents must describe settings blindly without UI screenshots, ALWAYS give knob settings using **both approximate clock positions (horas del reloj) AND the 0 to 10 scale**:
-  - **0 (Mínimo)** = **7:00** (totalmente girado a la izquierda / abajo)
-  - **2.5** = **9:30** (~un cuarto)
-  - **5.0 (Centro / Default)** = **12:00** (apuntando hacia arriba)
-  - **7.5** = **2:30** (~tres cuartos)
-  - **10 (Máximo)** = **5:00** (totalmente girado a la derecha / abajo)
+- **Mandatory format for knob recommendations**: Because agents must describe settings blindly without UI screenshots, ALWAYS give knob settings using **both approximate clock positions AND the 0 to 10 scale**:
+  - **0 (Minimum)** = **7:00** (fully turned counterclockwise / down)
+  - **2.5** = **9:30** (~one quarter)
+  - **5.0 (Center / Default)** = **12:00** (pointing straight up)
+  - **7.5** = **2:30** (~three quarters)
+  - **10 (Maximum)** = **5:00** (fully turned clockwise / down)
   - Common intermediate references:
     - ~1.5 – 2.0 = 8:30 – 9:00
     - ~3.5 – 4.0 = 10:30 – 11:00

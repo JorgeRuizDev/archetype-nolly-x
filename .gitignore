@@ -36,3 +36,8 @@ desktop.ini
 /Neural DSP/
 /Nolly/
 /Default.xml
+
+# Images & Screenshots
+*.png
+*.jpg
+*.jpeg
